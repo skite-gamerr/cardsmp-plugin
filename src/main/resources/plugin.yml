@@ -1,0 +1,18 @@
+name: CardSMP
+version: 1.0.0
+main: com.cardsmp.CardSMP
+author: CardSMP
+description: Card-based SMP plugin with abilities
+api-version: 1.21
+
+commands:
+  card:
+    description: CardSMP main command
+    usage: /<command> <reload|give|remove|info> [args]
+    permission: cardsmp.use
+
+permissions:
+  cardsmp.use:
+    default: true
+  cardsmp.admin:
+    default: op

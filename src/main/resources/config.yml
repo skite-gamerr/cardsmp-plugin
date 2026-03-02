@@ -1,0 +1,247 @@
+# CardSMP Configuration File
+
+# General Settings
+general:
+  allow-stealing: true
+  prevent-stacking: true
+  card-pickup-time: 10
+  show-abilities-on-join: true
+
+death:
+  drop-on-pvp: true
+  keep-on-natural-death: true
+
+cooldowns:
+  left-click: 30
+  right-click: 60
+
+messages:
+  cooldown: "§cAbility on cooldown: §e{time}s"
+  no-card: "§cYou don't have a card!"
+  card-received: "§aYou received: §e{card}§a!"
+  card-dropped: "§cYour card was stolen by §e{killer}§c!"
+  card-picked-up: "§aYou picked up §e{card}§a!"
+  card-stolen: "§aYou stole §e{victim}§a's card: §e{card}§a!"
+  not-your-card: "§cYou can't pick up this card!"
+  card-expired: "§cYou can no longer pick up this card!"
+  ability-activated: "§aAbility activated: §e{ability}"
+  no-permission: "§cYou don't have permission!"
+  reload-success: "§aCardSMP config reloaded!"
+  invalid-card: "§cInvalid card name!"
+  card-given: "§aGiven §e{card}§a to §e{player}§a!"
+  card-removed: "§cRemoved card from §e{player}§c!"
+
+cards:
+  ZOMBIE:
+    name: "Zombie"
+    display-name: "§aZombie Card"
+    lore:
+      - "§7Passive: Regenerate health"
+      - "§7Shift+Right: Heal yourself"
+      - "§7Shift+Left: Summon zombies"
+    passive:
+      enabled: true
+      heal-amount: 1
+      interval: 40
+    right-click:
+      name: "Undead Heal"
+      heal-amount: 5
+      cooldown: 45
+    left-click:
+      name: "Zombie Horde"
+      duration: 60
+      cooldown: 90
+
+  CREEPER:
+    name: "Creeper"
+    display-name: "§aCreeper Card"
+    lore:
+      - "§7Passive: Explode on death"
+      - "§7Shift+Right: Create explosion"
+      - "§7Shift+Left: Charged blast"
+    passive:
+      enabled: true
+      explosion-radius: 3
+      interval: 1
+    right-click:
+      name: "Creeper Burst"
+      damage: 4
+      explosion-radius: 3
+      cooldown: 30
+    left-click:
+      name: "Charged Blast"
+      damage: 10
+      explosion-radius: 6
+      cooldown: 90
+
+  ENDERMAN:
+    name: "Enderman"
+    display-name: "§5Enderman Card"
+    lore:
+      - "§7Passive: Random TP"
+      - "§7Shift+Right: Teleport"
+      - "§7Shift+Left: Escape"
+    passive:
+      enabled: true
+      teleport-chance: 5
+      interval: 60
+    right-click:
+      name: "Ender Portal"
+      teleport-distance: 30
+      cooldown: 20
+    left-click:
+      name: "Escape"
+      teleport-distance: 50
+      cooldown: 45
+
+  WARDEN:
+    name: "Warden"
+    display-name: "§8Warden Card"
+    lore:
+      - "§7Passive: Sonic resistance"
+      - "§7Shift+Right: Sonic boom"
+      - "§7Shift+Left: Fear aura"
+    passive:
+      enabled: true
+      sonic-resistance: 100
+      interval: 1
+    right-click:
+      name: "Sonic Boom"
+      damage: 8
+      knockback: 3
+      cooldown: 60
+    left-click:
+      name: "Fear Aura"
+      radius: 10
+      duration: 60
+      cooldown: 120
+
+  GHOST:
+    name: "Ghost"
+    display-name: "§7Ghost Card"
+    lore:
+      - "§7Passive: 50% damage reduction"
+      - "§7Shift+Right: Invisibility"
+      - "§7Shift+Left: Phasing"
+    passive:
+      enabled: true
+      damage-reduction: 50
+      interval: 1
+    right-click:
+      name: "Invisibility"
+      duration: 30
+      cooldown: 90
+    left-click:
+      name: "Phasing"
+      duration: 10
+      cooldown: 60
+
+  LIGHTNING:
+    name: "Lightning"
+    display-name: "§eLightning Card"
+    lore:
+      - "§7Passive: Auto strike"
+      - "§7Shift+Right: Lightning"
+      - "§7Shift+Left: Thunder storm"
+    passive:
+      enabled: true
+      strike-chance: 3
+      radius: 5
+      interval: 30
+    right-click:
+      name: "Lightning Strike"
+      damage: 6
+      cooldown: 15
+    left-click:
+      name: "Thunder Storm"
+      damage: 4
+      radius: 15
+      duration: 30
+      cooldown: 120
+
+  SKELETON:
+    name: "Skeleton"
+    display-name: "§fSkeleton Card"
+    lore:
+      - "§7Passive: Ranged bonus"
+      - "§7Shift+Right: Arrow volley"
+      - "§7Shift+Left: Bone shower"
+    passive:
+      enabled: true
+      damage-bonus: 25
+      interval: 1
+    right-click:
+      name: "Arrow Volley"
+      damage: 5
+      arrow-count: 5
+      cooldown: 45
+    left-click:
+      name: "Bone Shower"
+      damage: 4
+      bone-count: 12
+      cooldown: 60
+
+  HEROBRINE:
+    name: "Herobrine"
+    display-name: "§cHerobrine Card"
+    lore:
+      - "§7Passive: Wither on hit"
+      - "§7Shift+Right: Void send"
+      - "§7Shift+Left: Curse"
+    passive:
+      enabled: true
+      wither-chance: 20
+      interval: 1
+    right-click:
+      name: "Void Send"
+      void-height: -64
+      cooldown: 90
+    left-click:
+      name: "Herobrine's Curse"
+      damage: 3
+      duration: 60
+      cooldown: 120
+
+  WITHER:
+    name: "Wither"
+    display-name: "§3Wither Card"
+    lore:
+      - "§7Passive: Wither skeleton"
+      - "§7Shift+Right: Wither skull"
+      - "§7Shift+Left: Wither burst"
+    passive:
+      enabled: true
+      spawn-chance: 10
+      interval: 120
+    right-click:
+      name: "Wither Skull"
+      damage: 7
+      cooldown: 30
+    left-click:
+      name: "Wither Burst"
+      damage: 8
+      radius: 5
+      duration: 40
+      cooldown: 90
+
+  SHADOW:
+    name: "Shadow"
+    display-name: "§0Shadow Card"
+    lore:
+      - "§7Passive: Night vision"
+      - "§7Shift+Right: Shadow step"
+      - "§7Shift+Left: Darkness"
+    passive:
+      enabled: true
+      night-vision: true
+      interval: 1
+    right-click:
+      name: "Shadow Step"
+      distance: 15
+      cooldown: 25
+    left-click:
+      name: "Darkness"
+      damage: 2
+      radius: 12
+      duration: 40
+      cooldown: 75
